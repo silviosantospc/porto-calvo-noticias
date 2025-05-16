@@ -13,17 +13,17 @@ const HomePage: React.FC = () => {
         <div className="border rounded-lg p-4 shadow-lg">
           <h2 className="text-xl font-semibold mb-2">Título da Notícia Principal</h2>
           <p className="text-gray-700 mb-4">Um breve resumo da notícia para atrair o leitor...</p>
-          <a href="#" className="text-orange-600 hover:text-orange-700 font-semibold">Leia mais &rarr;</a>
+          <a href="#" className="text-red-500 hover:text-red-700 font-semibold">Leia mais &rarr;</a>
         </div>
         <div className="border rounded-lg p-4 shadow-lg">
           <h2 className="text-xl font-semibold mb-2">Outra Notícia Importante</h2>
           <p className="text-gray-700 mb-4">Um breve resumo da notícia para atrair o leitor...</p>
-          <a href="#" className="text-orange-600 hover:text-orange-700 font-semibold">Leia mais &rarr;</a>
+          <a href="#" className="text-red-500 hover:text-red-700 font-semibold">Leia mais &rarr;</a>
         </div>
         <div className="border rounded-lg p-4 shadow-lg">
           <h2 className="text-xl font-semibold mb-2">Mais um Destaque</h2>
           <p className="text-gray-700 mb-4">Um breve resumo da notícia para atrair o leitor...</p>
-          <a href="#" className="text-orange-600 hover:text-orange-700 font-semibold">Leia mais &rarr;</a>
+          <a href="#" className="text-red-500 hover:text-red-700 font-semibold">Leia mais &rarr;</a>
         </div>
       </div>
     </div>
@@ -31,3 +31,4 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
