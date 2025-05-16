@@ -11,18 +11,24 @@ const Navbar: React.FC = () => {
     { path: '/contato', label: 'Contato' },
   ];
 
+  const externalLinks = [
+    { href: "https://www.instagram.com/portocalvo_noticias?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", label: "Instagram" },
+    { href: "https://www.youtube.com/@portocalvonoticias", label: "YouTube" },
+    { href: "https://ads.google.com/aw/overview?ocid=28103626&workspaceId=0&ascid=28103626&euid=29991826&__u=7181990274&uscid=28103626&__c=9277908474&authuser=0&subid=br-pt-gdn-awa-pr-a-pmx%21o3~Cj0KCQjwoZbBBhDCARIsAOqMEZXOBUliEVeEle2zeFXQIvZNbu8Ifb4gQJ37z91erPahmIXdWqYAwK4aAqcLEALw_wcB~~~22177581972~", label: "AdSense" },
+  ];
+
   return (
     <nav className="bg-black shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-orange-500 text-2xl font-bold">
+            <Link to="/" className="text-red-500 text-2xl font-bold">
               Porto Calvo <span className="text-white">Notícias</span>
             </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+              {navItems.map((item ) => (
                 <Link
                   key={item.label}
                   to={item.path}
@@ -34,6 +40,17 @@ const Navbar: React.FC = () => {
                 >
                   {item.label}
                 </Link>
+              ))}
+              {externalLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  {link.label}
+                </a>
               ))}
             </div>
           </div>
@@ -50,7 +67,7 @@ const Navbar: React.FC = () => {
               <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              {/* Ícone de fechar menu (X) - mostrar quando o menu estiver aberto */}
+              {/* Ícone de fechar menu (X ) - mostrar quando o menu estiver aberto */}
               {/* <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg> */}
@@ -62,7 +79,7 @@ const Navbar: React.FC = () => {
       {/* Menu Mobile - mostrar/esconder com base no estado */}
       {/* <div className="md:hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navItems.map((item) => (
+          {navItems.map((item ) => (
             <Link
               key={item.label}
               to={item.path}
@@ -75,6 +92,17 @@ const Navbar: React.FC = () => {
               {item.label}
             </Link>
           ))}
+          {externalLinks.map((link) => ( 
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
       </div> */}
     </nav>
@@ -82,4 +110,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
