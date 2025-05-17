@@ -4,9 +4,56 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Painel de Administração de Conteúdo</title>
-  <link href="https://unpkg.com/netlify-cms@^2.0.0/dist/cms.css" rel="stylesheet" />
 </head>
 <body>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    // Configuração manual do CMS
+    window.CMS_MANUAL_INIT = true;
+    
+    // Inicialização com configuração embutida
+    CMS.init({
+      config: {
+        backend: {
+          name: "github",
+          repo: "silvoasantosc/porto-calvo-noticias",
+          branch: "main"
+        },
+        media_folder: "public/img",
+        public_folder: "/img",
+        publish_mode: "editorial_workflow",
+        collections: [
+          {
+            name: "noticias",
+            label: "Notícias",
+            folder: "_posts",
+            create: true,
+            slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
+            fields: [
+              { label: "Título", name: "title", widget: "string" },
+              { label: "Data", name: "date", widget: "datetime" },
+              { label: "Autor", name: "author", widget: "string", default: "Seu Nome" },
+              { label: "Imagem de Capa", name: "image", widget: "image" },
+              { label: "Corpo", name: "body", widget: "markdown" },
+              { label: "Categoria", name: "categoria", widget: "string" },
+              { label: "Tags", name: "tags", widget: "list" }
+            ]
+          },
+          {
+            name: "paginas",
+            label: "Páginas",
+            folder: "pages",
+            create: true,
+            slug: "{{slug}}",
+            fields: [
+              { label: "Título", name: "title", widget: "string" },
+              { label: "Corpo", name: "body", widget: "markdown" },
+              { label: "Ordem no Menu", name: "ordem", widget: "number", default: 1 }
+            ]
+          }
+        ]
+      }
+    } );
+  </script>
 </body>
 </html>
