@@ -5,7 +5,7 @@ backend:
   base_url: https://api.netlify.com
   auth_endpoint: auth
   client_id: 0v2311CaMdGXcCQ1k04j
-
+client_secret: 72fe8e5bf60a074aa2ebefcf06b49e6b4c3176e
 
 # Mantenha as configurações de pasta de mídia como estão
 media_folder: "public/img" # Pasta onde as imagens serão armazenadas no seu repositório
