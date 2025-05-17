@@ -1,8 +1,11 @@
 backend:
   name: github
-  repo: silvoasantosc/porto-calvo-noticias # Ajuste para seu nome de usuário/repositório
-  branch: main # Mantenha como está se sua branch principal for 'main'
-  base_url: https://api.netlify.com # Necessário para autenticação OAuth
+  repo: silvoasantosc/porto-calvo-noticias
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  client_id: 0v2311CaMdGXcCQ1k04j
+
 
 # Mantenha as configurações de pasta de mídia como estão
 media_folder: "public/img" # Pasta onde as imagens serão armazenadas no seu repositório
